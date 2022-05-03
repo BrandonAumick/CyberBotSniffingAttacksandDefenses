@@ -6,19 +6,9 @@ radio.config(channel=7)
 
 sleep(1000)
 
+string_list = ["HAPPY", "SAD", "ANGRY"]
 while True:
-    
-    packet = "HAPPY"
-    print("Send:", packet)
-    radio.send(packet)
-    sleep(2500)
-    
-    packet = "SAD"
-    print("Send:", packet)
-    radio.send(packet)
-    sleep(2500)
-
-    packet = "ANGRY"
-    print("Send:", packet)
-    radio.send(packet)
-    sleep(2500)
+    for packet in string_list:
+        print("Send:", packet)
+        radio.send(packet)
+        sleep(2500)
