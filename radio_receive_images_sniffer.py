@@ -9,10 +9,10 @@ sleep(1000)
 while True:
     
     packet = radio.receive()
-
+    
     if packet:
-        print("Receive:", packet)
-        display.show(getattr(Image, packet))
-    except AttributeError:
-        print("Receive:", packet)
-        print("packet not image string")
+        try:
+            print("Receive:", packet)
+            display.show(getattr(Image, packet))
+        except AttributeError:
+            print("packet not image string")
